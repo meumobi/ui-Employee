@@ -1,0 +1,27 @@
+<div class="scrollable" ui-state="searchBar">
+
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+		<input
+		ng-show="Ui.active('searchBar')"
+		type="search"
+		class="form-control scrollable-header"
+		ng-model="query"
+		placeholder="Search.." />
+    <div class="list-group animated">
+				<a 
+					ng-href="#/contacts/{{contact.id}}"
+					class="list-group-item"
+					ui-set="{transition: 'slide-left'}"
+					ng-repeat="contact in vm.contacts | filter:query track by contact.id"
+					ng-include="'contacts/headlines.html'">
+				</a>
+		</div>
+	</div>
+
+	<a class="btn btn-block btn-lg btn-primary scrollable-footer" ui-toggle='searchBar'>
+		<i class="fa fa-search"></i> 
+		<span ui-hide="searchBar">Show</span>
+		<span ui-show="searchBar">Hide</span>
+		Search Bar
+	</a>
+</div>

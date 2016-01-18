@@ -1,0 +1,29 @@
+<div class="media">
+	<div class="media-left">
+		<div class="media-placeholder thumb-large">
+			<i class="fa fa-user chat-user-avatar fa-5x"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<div class="title">
+			<h4 class="media-heading">{{::contact.name}}</h4>
+		</div>
+		<div class="block small" ng-switch on="::contact.status">
+			<div ng-switch-when="on">
+				<span ng-if="::contact.department">{{::contact.department}}<br/></span>
+				<span ng-if="::contact.work"><i class="fa fa-phone"></i>&nbsp;{{::contact.phone}}<br/></span>
+				<span ng-if="::contact.email"><i class="fa fa-envelope-o"></i>&nbsp;{{::contact.email}}</span>
+			</div>
+			<div ng-switch-when="off">
+				<span class="label label-default">OFF</span>
+			</div>
+			<div ng-switch-default>
+				<span class="label label-default"><i>OFF</i>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="media-right media-middle">
+		<i class="fa fa-chevron-right pull-right"></i>
+	</div>
+</div>

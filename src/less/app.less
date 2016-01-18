@@ -1,0 +1,26 @@
+@import "mobile-angular-ui/src/less/mobile-angular-ui-base.less";
+@import "mixins.less";
+@import "variables.less";
+
+.navbar-app .btn.active, .navbar-app .btn-navbar.active {
+	color: @navbar-default-link-active-color;
+	background-color: @navbar-default-link-active-bg;
+}
+
+div.media-body .title {
+  border-left: 6px solid @brand-primary;
+  padding-left: 5px
+}
+
+.slide {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background: inherit;
+}
+
+.ng-enter {
+	opacity: 0;
+}
+.ng-enter.ng-enter-active {
+	opacity: 1;
+}
